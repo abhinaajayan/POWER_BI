@@ -1,4 +1,4 @@
-# Python For Data Visualization – Notes
+# Python For Data Visualization
 
 Python visualization is used to represent data graphically.  
 It helps in exploring, understanding, and presenting data patterns.  
@@ -47,3 +47,57 @@ plt.title("Line Plot Example")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
+```
+---
+
+## 4️⃣ Seaborn Basics
+
+**Seaborn** is a statistical visualization library that works well with **Pandas DataFrames**.
+
+### Load Dataset
+
+```python
+import seaborn as sns
+import pandas as pd
+
+df = sns.load_dataset("tips")
+```
+---
+
+### Scatter Plot with Regression Line (Seaborn)
+
+```python
+import seaborn as sns
+
+df = sns.load_dataset("tips")
+sns.lmplot(x="total_bill", y="tip", data=df)
+```
+---
+
+## Heatmap of Correlation (Seaborn)
+
+```python
+import seaborn as sns
+
+# Assuming df is already loaded
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm")
+```
+---
+
+## 5️⃣ Plotly Basics (Interactive)
+
+**Plotly** is used for interactive, web-ready visualizations.
+
+### Scatter Plot (Plotly)
+
+```python
+import plotly.express as px
+
+# Load sample dataset
+df = px.data.iris()
+
+# Create interactive scatter plot
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")
+fig.show()
+```
+---
